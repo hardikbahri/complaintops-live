@@ -1,16 +1,17 @@
 # ComplaintOps Live
 
-A daily check of how my [ComplaintOps](https://github.com/hardikbahri/complaintops) complaint-triage model holds up on brand-new, real consumer complaints.
+A daily check on whether the world my [ComplaintOps](https://github.com/hardikbahri/complaintops) complaint-triage model was trained on still looks like the world it would serve.
+
+ComplaintOps classifies US consumer financial complaints into 24 product + issue classes (DistilBERT + LoRA, int8 ONNX, [on Hugging Face](https://huggingface.co/hb-007/complaintops-distilbert-lora-onnx)). Background in the article: [My LLM was confident 99% of the time. It was right 39% of the time.](https://medium.com/@hardik.bahri/my-llm-was-confident-99-of-the-time-it-was-right-39-of-the-time-84c6fc2e34f3)
 
 Every morning a GitHub Actions job:
 
-1. pulls the newest complaints published by the US Consumer Financial Protection Bureau ([public API](https://cfpb.github.io/api/ccdb/)),
-2. classifies the ones it hasn't seen before with the ComplaintOps model (DistilBERT + LoRA, int8 ONNX, [on Hugging Face](https://huggingface.co/hb-007/complaintops-distilbert-lora-onnx)),
-3. compares each prediction with the product and issue the consumer selected,
-4. checks for drift (PSI on the predicted class mix and on confidence) against a baseline frozen from the first live runs,
-5. commits the day's predictions, a short report and this dashboard.
+1. counts the complaints the CFPB received 15 days earlier (late publications have landed by then), by product and issue, from the [public complaint API](https://cfpb.github.io/api/ccdb/),
+2. maps every product + issue onto the model's 24 classes, with the same mapping used in training and the class list read from the model's `classes.json`,
+3. measures **coverage** (share of complaints the model has a class for) and **label drift** (PSI of the class mix against a 28-day reference window),
+4. commits the day's counts, a short report and this dashboard.
 
-The question it answers: does the confidence gate (auto-answer at confidence 0.80 or above, route the rest to a person) still deliver the accuracy it showed offline, on complaints the model has never seen? Background in the article: [My LLM was confident 99% of the time. It was right 39% of the time.](https://medium.com/@hardik.bahri/my-llm-was-confident-99-of-the-time-it-was-right-39-of-the-time-84c6fc2e34f3)
+Why labels and not predictions: the CFPB has stopped publishing complaint narratives in its public data, so there is no new text to run the model on. The product and issue the consumer picks are still published, and they are exactly what the model predicts. A drop in coverage means new kinds of complaints the model can't name; a rising PSI means the class mix (and the priors behind the model's calibration offsets) has moved, which is the signal to re-check thresholds or retrain.
 
 Reports below are generated automatically by the daily job.
 
@@ -24,18 +25,18 @@ First run pending.
 
 | Status | Meaning |
 | --- | --- |
-| OK | PSI below 0.10 and auto-answer accuracy within 4 points of offline |
-| WATCH | PSI 0.10 to 0.25, or accuracy 4 to 8 points below offline |
-| ALERT | PSI above 0.25, or accuracy more than 8 points below offline |
-| LOW VOLUME | fewer than 30 new complaints that day |
+| OK | PSI below 0.10 and coverage within 5 points of the reference window |
+| WATCH | PSI 0.10 to 0.25, or coverage 5 to 10 points below reference |
+| ALERT | PSI above 0.25, or coverage more than 10 points below reference |
+| LOW VOLUME | fewer than 200 complaints that day |
 
 ## Layout
 
 - `monitor/run.py`: the daily job
-- `monitor/labels.py`: maps CFPB product and issue to the model's 24 classes (same mapping as training)
-- `data/daily/`: one CSV per run (complaint id, true label, prediction, confidence). No complaint text is stored.
-- `reports/`: one markdown report per run, plus `trend.png`
-- `history.csv`: one row per run
-- `state/`: complaint ids already processed and the frozen drift baseline
+- `monitor/labels.py`: maps CFPB product and issue to the model's classes (same mapping as training)
+- `data/daily/`: one CSV per receipt date (product, issue, model class, complaint count)
+- `reports/`: one markdown report per receipt date, plus `trend.png`
+- `history.csv`: one row per receipt date
+- `state/baseline.json`: the frozen reference window
 
 Run it yourself: `pip install -r requirements.txt && python -m monitor.run`
