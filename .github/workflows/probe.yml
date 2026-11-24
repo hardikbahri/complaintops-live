@@ -1,0 +1,15 @@
+name: probe
+on: workflow_dispatch
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          UA="complaintops-live monitor"
+          B="https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1"
+          for u in "$B/?size=1" "$B/?size=2&has_narrative=true&no_aggs=true" "$B/?size=2&sort=created_date_desc&no_aggs=true&format=json" "$B/_meta" "https://files.consumerfinance.gov/ccdb/complaints.json.zip" ; do
+            echo "=== $u"
+            curl -sS -A "$UA" -o body -w "HTTP %{http_code} %{size_download}B %{url_effective}\n" -L --max-time 60 "$u" || true
+            head -c 1500 body | tr -d '\0'; echo
+          done
+          curl -sSL https://cfpb.github.io/ccdb5-api/documentation/ | grep -oE '(url|href|src)[:=] ?"[^"]+"' | head -20
