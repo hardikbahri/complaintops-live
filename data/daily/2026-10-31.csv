@@ -1,0 +1,84 @@
+product,issue,model_class,complaints
+Credit reporting or other personal consumer reports,Incorrect information on your report,"Credit reporting | Dispute, accuracy or use of report",8948
+Credit reporting or other personal consumer reports,Problem with a company's investigation into an existing problem,"Credit reporting | Dispute, accuracy or use of report",3086
+Credit reporting or other personal consumer reports,Improper use of your report,"Credit reporting | Dispute, accuracy or use of report",2476
+Debt collection,Attempts to collect debt not owed,Debt collection | Attempts to collect debt not owed,187
+Checking or savings account,Managing an account,Checking or savings account | Managing an account,115
+Debt collection,False statements or representation,Debt collection | False statements or representation,72
+Credit card,Problem with a purchase shown on your statement,Credit card | Problem with a purchase shown on your statement,68
+Debt collection,Written notification about debt,Debt collection | Written notification about debt,54
+Debt collection,Took or threatened to take negative or legal action,Debt collection | Took or threatened to take negative or legal action,43
+Mortgage,Trouble during payment process,Mortgage | Trouble during payment process,43
+Credit reporting or other personal consumer reports,Unable to get your credit report or credit score,Credit reporting | Unable to get your credit report or credit score,39
+Checking or savings account,Problem with a lender or other company charging your account,Checking or savings account | Problem with a lender or other company charging your account,28
+"Money transfer, virtual currency, or money service",Fraud or scam,"Money transfer, virtual currency, or money service | Fraud or scam",27
+Credit card,Closing your account,Outside the model's classes,25
+Credit card,"Other features, terms, or problems","Credit card | Other features, terms, or problems",23
+Credit card,Fees or interest,Credit card | Fees or interest,21
+Checking or savings account,Closing an account,Checking or savings account | Closing an account,21
+Mortgage,Struggling to pay mortgage,Mortgage | Struggling to pay mortgage,20
+Credit card,Getting a credit card,Credit card | Getting a credit card,19
+"Money transfer, virtual currency, or money service",Unauthorized transactions or other transaction problem,Outside the model's classes,18
+Student loan,Dealing with your lender or servicer,Student loan | Dealing with your lender or servicer,18
+"Money transfer, virtual currency, or money service",Other transaction problem,Outside the model's classes,17
+Checking or savings account,Opening an account,Checking or savings account | Opening an account,16
+Credit card,Trouble using your card,Outside the model's classes,14
+Vehicle loan or lease,Managing the loan or lease,Vehicle loan or lease | Managing the loan or lease,14
+Credit card,Problem with a company's investigation into an existing problem,Outside the model's classes,13
+Credit card,Incorrect information on your report,Outside the model's classes,12
+"Money transfer, virtual currency, or money service",Trouble accessing funds in your mobile or digital wallet,Outside the model's classes,11
+Vehicle loan or lease,Repossession,Outside the model's classes,11
+Credit reporting or other personal consumer reports,Problem with a company's investigation into an existing issue,Outside the model's classes,10
+Checking or savings account,Problem caused by your funds being low,Outside the model's classes,10
+"Money transfer, virtual currency, or money service","Managing, opening, or closing your mobile wallet account",Outside the model's classes,9
+"Payday loan, title loan, personal loan, or advance loan",Problem when making payments,Outside the model's classes,9
+Prepaid card,Problem with a purchase or transfer,Outside the model's classes,9
+"Payday loan, title loan, personal loan, or advance loan",Charged fees or interest you didn't expect,Outside the model's classes,8
+Credit card,"Advertising and marketing, including promotional offers",Outside the model's classes,7
+Vehicle loan or lease,Getting a loan or lease,Outside the model's classes,7
+Debt collection,Communication tactics,Debt collection | Communication tactics,6
+Credit card,Problem when making payments,Credit card | Problem when making payments,6
+Credit card,Struggling to pay your bill,Outside the model's classes,6
+Mortgage,Applying for a mortgage or refinancing an existing mortgage,Mortgage | Applying for a mortgage or refinancing an existing mortgage,6
+Vehicle loan or lease,Problems at the end of the loan or lease,Outside the model's classes,6
+"Payday loan, title loan, personal loan, or advance loan",Getting the loan,Outside the model's classes,6
+Student loan,Struggling to repay your loan,Outside the model's classes,6
+Vehicle loan or lease,Struggling to pay your loan,Outside the model's classes,5
+Credit reporting or other personal consumer reports,Credit monitoring or identity theft protection services,Outside the model's classes,4
+Credit reporting or other personal consumer reports,Problem with fraud alerts or security freezes,Credit reporting | Problem with fraud alerts or security freezes,4
+"Money transfer, virtual currency, or money service",Confusing or missing disclosures,Outside the model's classes,4
+Debt collection,Electronic communications,Outside the model's classes,3
+Credit card,Improper use of your report,Outside the model's classes,3
+"Money transfer, virtual currency, or money service",Money was not available when promised,Outside the model's classes,3
+Mortgage,Closing on a mortgage,Outside the model's classes,3
+Vehicle loan or lease,Incorrect information on your report,Outside the model's classes,3
+"Payday loan, title loan, personal loan, or advance loan",Incorrect information on your report,Outside the model's classes,3
+Prepaid card,Problem getting a card or closing an account,Outside the model's classes,3
+Prepaid card,Trouble using the card,Outside the model's classes,3
+Debt or credit management,Charged upfront or unexpected fees,Outside the model's classes,3
+Debt collection,Threatened to contact someone or share information improperly,Outside the model's classes,2
+Checking or savings account,Debanking,Outside the model's classes,2
+Mortgage,Incorrect information on your report,Outside the model's classes,2
+"Payday loan, title loan, personal loan, or advance loan",Problem with the payoff process at the end of the loan,Outside the model's classes,2
+Student loan,Incorrect information on your report,Outside the model's classes,2
+Prepaid card,Unexpected or other fees,Outside the model's classes,2
+Debt or credit management,Unauthorized withdrawals or charges,Outside the model's classes,2
+Credit reporting or other personal consumer reports,Identity theft protection or other monitoring services,Outside the model's classes,1
+Credit card,Problem with fraud alerts or security freezes,Outside the model's classes,1
+"Money transfer, virtual currency, or money service",Confusing or misleading advertising or marketing,Outside the model's classes,1
+"Money transfer, virtual currency, or money service",Lost or stolen money order,Outside the model's classes,1
+"Money transfer, virtual currency, or money service",Other service problem,Outside the model's classes,1
+"Money transfer, virtual currency, or money service","Overdraft, savings, or rewards features",Outside the model's classes,1
+"Money transfer, virtual currency, or money service",Problem with customer service,Outside the model's classes,1
+"Money transfer, virtual currency, or money service",Wrong amount charged or received,Outside the model's classes,1
+Mortgage,Improper use of your report,Outside the model's classes,1
+Vehicle loan or lease,Unable to get your credit report or credit score,Outside the model's classes,1
+"Payday loan, title loan, personal loan, or advance loan",Can't contact lender or servicer,Outside the model's classes,1
+"Payday loan, title loan, personal loan, or advance loan",Getting a line of credit,Outside the model's classes,1
+"Payday loan, title loan, personal loan, or advance loan",Loan payment wasn't credited to your account,Outside the model's classes,1
+"Payday loan, title loan, personal loan, or advance loan",Problem with a company's investigation into an existing problem,Outside the model's classes,1
+"Payday loan, title loan, personal loan, or advance loan",Struggling to pay your loan,Outside the model's classes,1
+"Payday loan, title loan, personal loan, or advance loan","Was approved for a loan, but didn't receive the money",Outside the model's classes,1
+Student loan,Getting a loan,Outside the model's classes,1
+Debt or credit management,Confusing or misleading advertising or marketing,Outside the model's classes,1
+Debt or credit management,Confusing or missing disclosures,Outside the model's classes,1
