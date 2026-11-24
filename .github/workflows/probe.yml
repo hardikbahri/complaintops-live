@@ -6,10 +6,20 @@ jobs:
     steps:
       - run: |
           UA="complaintops-live monitor"
-          B="https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1"
-          for u in "$B/?size=1" "$B/?size=2&has_narrative=true&no_aggs=true" "$B/?size=2&sort=created_date_desc&no_aggs=true&format=json" "$B/_meta" "https://files.consumerfinance.gov/ccdb/complaints.json.zip" ; do
-            echo "=== $u"
-            curl -sS -A "$UA" -o body -w "HTTP %{http_code} %{size_download}B %{url_effective}\n" -L --max-time 60 "$u" || true
-            head -c 1500 body | tr -d '\0'; echo
-          done
-          curl -sSL https://cfpb.github.io/ccdb5-api/documentation/ | grep -oE '(url|href|src)[:=] ?"[^"]+"' | head -20
+          B="https://www.consumerfinance.gov/data-research/consumer-complaints/search/api/v1/"
+          q() { echo "=== $1"; curl -sS -A "$UA" --max-time 90 "$B?$1" -o body -w "HTTP %{http_code} %{size_download}B\n" || true; python3 - <<'P'
+          import json
+          try: d=json.load(open("body"))
+          except Exception as e: print("not json", open("body").read()[:200]); raise SystemExit
+          if isinstance(d,list): print("LIST", len(d), json.dumps(d[:1])[:600]); raise SystemExit
+          h=d.get("hits",{}); print("total", h.get("total")); print("meta", json.dumps(d.get("_meta"))[:400])
+          for x in h.get("hits",[])[:3]:
+              s=x["_source"]; print(s.get("complaint_id"), s.get("date_received"), sorted(s.keys())); print("  narrative:", (s.get("complaint_what_happened") or "")[:150])
+P
+          }
+          q "size=3&no_aggs=true&sort=created_date_desc"
+          q "size=3&no_aggs=true&sort=created_date_desc&has_narrative=true"
+          q "size=3&no_aggs=true&has_narrative=true&date_received_min=2026-06-01"
+          q "size=3&no_aggs=true&search_term=bank&field=complaint_what_happened"
+          q "size=3&no_aggs=true&has_narrative=false"
+          q "size=3&no_aggs=true&has_narrative=true&format=json"
