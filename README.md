@@ -18,7 +18,7 @@ Reports below are generated automatically by the daily job.
 ## Dashboard
 
 <!-- LIVE:START -->
-**Last run:** 2026-11-24 | **Latest receipt date checked:** 2026-11-09 | **Status:** OK
+**Last run:** 2026-11-25 | **Latest receipt date checked:** 2026-11-10 | **Status:** OK
 
 Reference window: complaints received 2026-09-29 to 2026-10-26 (677,358 complaints, 98.2% covered by the model's classes).
 
@@ -26,13 +26,13 @@ Reference window: complaints received 2026-09-29 to 2026-10-26 (677,358 complain
 
 | Received | Complaints | Coverage | PSI class mix | Largest class | Status |
 | --- | --- | --- | --- | --- | --- |
+| [2026-11-10](reports/2026-11-10.md) | 33,970 | 98.7% | 0.006 | Credit reporting / Dispute, accuracy or use of report (93.5%) | OK |
 | [2026-11-09](reports/2026-11-09.md) | 27,740 | 98.8% | 0.008 | Credit reporting / Dispute, accuracy or use of report (93.8%) | OK |
 | [2026-11-08](reports/2026-11-08.md) | 7,552 | 96.8% | 0.034 | Credit reporting / Dispute, accuracy or use of report (86.8%) | OK |
 | [2026-11-07](reports/2026-11-07.md) | 16,967 | 98.0% | 0.003 | Credit reporting / Dispute, accuracy or use of report (91.5%) | OK |
 | [2026-11-06](reports/2026-11-06.md) | 32,221 | 98.5% | 0.003 | Credit reporting / Dispute, accuracy or use of report (92.7%) | OK |
 | [2026-11-05](reports/2026-11-05.md) | 33,643 | 98.3% | 0.004 | Credit reporting / Dispute, accuracy or use of report (92.5%) | OK |
 | [2026-11-04](reports/2026-11-04.md) | 33,294 | 98.4% | 0.002 | Credit reporting / Dispute, accuracy or use of report (92.4%) | OK |
-| [2026-11-03](reports/2026-11-03.md) | 33,943 | 98.4% | 0.001 | Credit reporting / Dispute, accuracy or use of report (92.4%) | OK |
 <!-- LIVE:END -->
 
 ## Status rules
