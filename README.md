@@ -35,6 +35,17 @@ Reference window: complaints received 2026-09-29 to 2026-10-26 (677,358 complain
 | [2026-11-04](reports/2026-11-04.md) | 33,294 | 98.4% | 0.002 | Credit reporting / Dispute, accuracy or use of report (92.4%) | OK |
 <!-- LIVE:END -->
 
+## Daily model evaluation
+
+The CFPB data no longer has complaint text, so the model is also checked another way: every day the published int8
+ONNX model classifies 500 complaints sampled (seeded by the date) from the held-out test split, the newest 15% of the
+ComplaintOps data that the model never trained on. This catches a broken model upload, a tokenizer mismatch or a slow
+runtime within a day, and tracks CPU latency on a standard GitHub runner.
+
+<!-- EVAL:START -->
+First evaluation pending.
+<!-- EVAL:END -->
+
 ## Status rules
 
 | Status | Meaning |
@@ -51,6 +62,8 @@ Reference window: complaints received 2026-09-29 to 2026-10-26 (677,358 complain
 - `data/daily/`: one CSV per receipt date (product, issue, model class, complaint count)
 - `reports/`: one markdown report per receipt date, plus `trend.png`
 - `history.csv`: one row per receipt date
+- `monitor/evaluate.py`, `eval_history.csv`, `reports/eval/`: the daily model evaluation
+- `data/eval/test.jsonl.gz`: the held-out test split (CFPB public complaints, already redacted by the CFPB)
 - `state/baseline.json`: the frozen reference window
 
 Run it yourself: `pip install -r requirements.txt && python -m monitor.run`
