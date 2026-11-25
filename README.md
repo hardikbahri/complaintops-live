@@ -43,7 +43,11 @@ ComplaintOps data that the model never trained on. This catches a broken model u
 runtime within a day, and tracks CPU latency on a standard GitHub runner.
 
 <!-- EVAL:START -->
-First evaluation pending.
+**Latest (2026-11-25):** 500 held-out complaints, accuracy 84.0%, answered automatically 70.2% at 94.9% accuracy, 43.2 ms per request (p50, CPU).
+
+| Date | Accuracy | Auto-answered | Accuracy (auto) | p50 ms |
+| --- | --- | --- | --- | --- |
+| [2026-11-25](reports/eval/2026-11-25.md) | 84.0% | 70.2% | 94.9% | 43.2 |
 <!-- EVAL:END -->
 
 ## Status rules

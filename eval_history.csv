@@ -1,0 +1,2 @@
+date,n,accuracy,auto_rate,auto_accuracy,ms_per_complaint_batched,ms_single_p50,ms_single_p95
+2026-11-25,500,0.84,0.702,0.9487,52.5,43.2,51.3
