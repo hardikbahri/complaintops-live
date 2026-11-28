@@ -18,7 +18,7 @@ Reports below are generated automatically by the daily job.
 ## Dashboard
 
 <!-- LIVE:START -->
-**Last run:** 2026-11-27 | **Latest receipt date checked:** 2026-11-12 | **Status:** OK
+**Last run:** 2026-11-28 | **Latest receipt date checked:** 2026-11-13 | **Status:** OK
 
 Reference window: complaints received 2026-09-29 to 2026-10-26 (677,358 complaints, 98.2% covered by the model's classes).
 
@@ -26,13 +26,13 @@ Reference window: complaints received 2026-09-29 to 2026-10-26 (677,358 complain
 
 | Received | Complaints | Coverage | PSI class mix | Largest class | Status |
 | --- | --- | --- | --- | --- | --- |
+| [2026-11-13](reports/2026-11-13.md) | 29,049 | 98.3% | 0.003 | Credit reporting / Dispute, accuracy or use of report (92.6%) | OK |
 | [2026-11-12](reports/2026-11-12.md) | 30,609 | 98.6% | 0.006 | Credit reporting / Dispute, accuracy or use of report (93.6%) | OK |
 | [2026-11-11](reports/2026-11-11.md) | 34,202 | 98.6% | 0.004 | Credit reporting / Dispute, accuracy or use of report (93.4%) | OK |
 | [2026-11-10](reports/2026-11-10.md) | 33,970 | 98.7% | 0.006 | Credit reporting / Dispute, accuracy or use of report (93.5%) | OK |
 | [2026-11-09](reports/2026-11-09.md) | 27,740 | 98.8% | 0.008 | Credit reporting / Dispute, accuracy or use of report (93.8%) | OK |
 | [2026-11-08](reports/2026-11-08.md) | 7,552 | 96.8% | 0.034 | Credit reporting / Dispute, accuracy or use of report (86.8%) | OK |
 | [2026-11-07](reports/2026-11-07.md) | 16,967 | 98.0% | 0.003 | Credit reporting / Dispute, accuracy or use of report (91.5%) | OK |
-| [2026-11-06](reports/2026-11-06.md) | 32,221 | 98.5% | 0.003 | Credit reporting / Dispute, accuracy or use of report (92.7%) | OK |
 <!-- LIVE:END -->
 
 ## Daily model evaluation
@@ -43,12 +43,13 @@ ComplaintOps data that the model never trained on. This catches a broken model u
 runtime within a day, and tracks CPU latency on a standard GitHub runner.
 
 <!-- EVAL:START -->
-**Latest (2026-11-27):** 500 held-out complaints, accuracy 85.0%, answered automatically 72.8% at 94.0% accuracy, 10.4 ms per request (p50, CPU).
+**Latest (2026-11-28):** 500 held-out complaints, accuracy 79.6%, answered automatically 67.6% at 93.8% accuracy, 29.2 ms per request (p50, CPU).
 
 ![Evaluation trend](reports/eval_trend.png)
 
 | Date | Accuracy | Auto-answered | Accuracy (auto) | p50 ms |
 | --- | --- | --- | --- | --- |
+| [2026-11-28](reports/eval/2026-11-28.md) | 79.6% | 67.6% | 93.8% | 29.2 |
 | [2026-11-27](reports/eval/2026-11-27.md) | 85.0% | 72.8% | 94.0% | 10.4 |
 | [2026-11-26](reports/eval/2026-11-26.md) | 81.6% | 72.4% | 92.3% | 14.4 |
 | [2026-11-25](reports/eval/2026-11-25.md) | 84.0% | 70.2% | 94.9% | 43.2 |
